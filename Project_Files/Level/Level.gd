@@ -2,6 +2,7 @@ extends Node
 
 var player_score := 0
 var opponent_score := 0
+var paused = false
 
 @onready var opponent_label: Label = %OppentScore
 @onready var player_label: Label = %PlayerScore
@@ -10,6 +11,7 @@ var opponent_score := 0
 @onready var count_down_label: Label = %CountDownLabel
 @onready var score_sound: AudioStreamPlayer = %ScoreSound
 @onready var player_name: Label = %PlayerName
+@onready var pause_menu: Control = %PauseMenu
 
 var main_menu_scene: PackedScene
 
@@ -19,6 +21,19 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	count_down_label.text = str(ceil(countdown_timer.time_left))
+	
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1 
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0 
+		
+	paused = !paused 
 
 func check_game_end() -> void:
 	if player_score >= 5:

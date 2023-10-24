@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.537255, 0.568627, 0.407843)
+color = Color(0.254902, 0.556863, 0, 0.94902)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BackGround"]
 layout_mode = 1
@@ -48,3 +48,6 @@ text = "Resume Game"
 layout_mode = 2
 size_flags_vertical = 3
 text = "Quit to Main Menu"
+
+[connection signal="pressed" from="BackGround/VBoxContainer/Resume_Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="BackGround/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]

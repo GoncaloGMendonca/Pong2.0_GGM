@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7vl4m60d063k"]
+[gd_scene load_steps=12 format=3 uid="uid://b7vl4m60d063k"]
 
 [ext_resource type="PackedScene" uid="uid://cjtvnmsyk6qbs" path="res://Player/character_body_2d.tscn" id="1_pg4sg"]
 [ext_resource type="Script" path="res://Level/Level.gd" id="1_rub81"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d4cg608s5otey" path="res://opppent_paddle.tscn" id="2_garsg"]
 [ext_resource type="PackedScene" uid="uid://y4ei0r3b7obj" path="res://Ball/ball.tscn" id="3_cb5ac"]
 [ext_resource type="AudioStream" uid="uid://bh230fxyvfmlp" path="res://pong_assets/ping_pong_8bit_beeep.ogg" id="6_185pf"]
+[ext_resource type="PackedScene" uid="uid://c2h2cu12psype" path="res://Pause_Menu/pause_menu.tscn" id="7_1tiw5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_52nyx"]
 font = ExtResource("2_a5qe0")
@@ -134,6 +135,10 @@ autostart = true
 [node name="ScoreSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("6_185pf")
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_1tiw5")]
+unique_name_in_owner = true
+visible = false
 
 [connection signal="body_entered" from="WallLeft" to="." method="_on_wall_left_body_entered"]
 [connection signal="body_entered" from="WalRight" to="." method="_on_wal_right_body_entered"]
