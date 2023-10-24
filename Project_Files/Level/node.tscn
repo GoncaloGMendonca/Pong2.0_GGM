@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b7vl4m60d063k"]
 
-[ext_resource type="Script" path="res://Level/node.gd" id="1_dgw1y"]
-[ext_resource type="PackedScene" uid="uid://b0wn46od1556g" path="res://Player/character_body_2d.tscn" id="1_pg4sg"]
+[ext_resource type="PackedScene" uid="uid://cjtvnmsyk6qbs" path="res://Player/character_body_2d.tscn" id="1_pg4sg"]
+[ext_resource type="Script" path="res://Level/Level.gd" id="1_rub81"]
 [ext_resource type="FontFile" uid="uid://ctdelqmd7xqf6" path="res://pong_assets/PoetsenOne-Regular.ttf" id="2_a5qe0"]
 [ext_resource type="PackedScene" uid="uid://d4cg608s5otey" path="res://opppent_paddle.tscn" id="2_garsg"]
 [ext_resource type="PackedScene" uid="uid://y4ei0r3b7obj" path="res://Ball/ball.tscn" id="3_cb5ac"]
@@ -24,7 +24,7 @@ size = Vector2(1182, 29)
 size = Vector2(52, 639)
 
 [node name="Level" type="Node"]
-script = ExtResource("1_dgw1y")
+script = ExtResource("1_rub81")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -92,14 +92,14 @@ position = Vector2(31, 324)
 [node name="Wall_Bottom" type="StaticBody2D" parent="."]
 position = Vector2(31, 1000)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Bottom"]
+[node name="WB" type="CollisionShape2D" parent="Wall_Bottom"]
 position = Vector2(552, -335.5)
 shape = SubResource("RectangleShape2D_5unsx")
 
 [node name="Wall_Top" type="StaticBody2D" parent="."]
 position = Vector2(31, 324)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Top"]
+[node name="WT" type="CollisionShape2D" parent="Wall_Top"]
 position = Vector2(552, -335.5)
 shape = SubResource("RectangleShape2D_5unsx")
 

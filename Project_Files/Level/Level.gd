@@ -1,7 +1,7 @@
 extends Node
 
-var player_score:= 0
-var opponent_score:=0 
+var player_score := 0
+var opponent_score := 0
 
 @onready var opponent_label: Label = %OppentScore
 @onready var player_label: Label = %PlayerScore
@@ -11,13 +11,26 @@ var opponent_score:=0
 @onready var score_sound: AudioStreamPlayer = %ScoreSound
 @onready var player_name: Label = %PlayerName
 
+var main_menu_scene: PackedScene
 
 func _ready() -> void:
 	player_name.text = GameManager.player1_name
+	main_menu_scene = ResourceLoader.load("res://MainMenu.tscn")
 
 func _process(_delta: float) -> void:
 	count_down_label.text = str(ceil(countdown_timer.time_left))
 
+func check_game_end() -> void:
+	if player_score >= 5:
+		#player ganha 
+		game_end("Player")
+	elif opponent_score >= 5:
+		#inimigo ganha 
+		game_end("Opponent")
+
+func game_end(winner) -> void:
+	get_tree().change_scene_to_file("res://Main_Menu/main_menu.tscn")
+	
 
 func _on_wall_left_body_entered(body: Node2D) -> void:
 	if body is Ball:
@@ -25,21 +38,22 @@ func _on_wall_left_body_entered(body: Node2D) -> void:
 		ball.stop_moving()
 		countdown_timer.start()
 		count_down_label.show()
-		opponent_score += 1 
+		opponent_score += 1
 		opponent_label.text = str(opponent_score)
 		score_sound.play()
-	
-	
-func _on_wal_right_body_entered(body: Node2D)-> void:
+		check_game_end()
+
+func _on_wal_right_body_entered(body: Node2D) -> void:
 	if body is Ball:
 		body.position = get_viewport().size / 2
 		ball.stop_moving()
 		countdown_timer.start()
 		count_down_label.show()
-		player_score +=1 
+		player_score += 1
 		player_label.text = str(player_score)
 		score_sound.play()
+		check_game_end()
 
-func _on_countdown_timer_timeout()  -> void:
+func _on_countdown_timer_timeout() -> void:
 	ball.start_moving()
 	count_down_label.hide()
