@@ -5,14 +5,14 @@ extends CharacterBody2D
 @onready var collision_sound: AudioStreamPlayer = %CollisionSound
 
 
+
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 		collision_sound.play() 
-
-
+		
 
 
 func stop_moving() -> void:

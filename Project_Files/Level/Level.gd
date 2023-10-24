@@ -44,7 +44,7 @@ func check_game_end() -> void:
 		game_end("Opponent")
 
 func game_end(winner) -> void:
-	get_tree().change_scene_to_file("res://Main_Menu/main_menu.tscn")
+	get_tree().change_scene_to_file("res://UI_Menus/Results_Menu/results_menu.tscn")
 	
 
 func _on_wall_left_body_entered(body: Node2D) -> void:
@@ -72,3 +72,6 @@ func _on_wal_right_body_entered(body: Node2D) -> void:
 func _on_countdown_timer_timeout() -> void:
 	ball.start_moving()
 	count_down_label.hide()
+
+
+
