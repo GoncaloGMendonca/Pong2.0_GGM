@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d4cg608s5otey" path="res://opppent_paddle.tscn" id="2_garsg"]
 [ext_resource type="PackedScene" uid="uid://y4ei0r3b7obj" path="res://Ball/ball.tscn" id="3_cb5ac"]
 [ext_resource type="AudioStream" uid="uid://bh230fxyvfmlp" path="res://pong_assets/ping_pong_8bit_beeep.ogg" id="6_185pf"]
-[ext_resource type="PackedScene" uid="uid://c2h2cu12psype" path="res://Pause_Menu/pause_menu.tscn" id="7_1tiw5"]
+[ext_resource type="PackedScene" uid="uid://c2h2cu12psype" path="res://UI_Menus/Pause_Menu/pause_menu.tscn" id="7_1tiw5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_52nyx"]
 font = ExtResource("2_a5qe0")

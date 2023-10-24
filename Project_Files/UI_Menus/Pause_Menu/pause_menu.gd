@@ -7,4 +7,4 @@ func _on_resume_button_pressed():
 
 
 func _on_quit_button_pressed():
-	get_tree().change_scene_to_file("res://Main_Menu/main_menu.tscn")
+	get_tree().change_scene_to_file("res://UI_Menus/Main_Menu/main_menu.tscn")

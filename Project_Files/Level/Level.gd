@@ -17,7 +17,7 @@ var main_menu_scene: PackedScene
 
 func _ready() -> void:
 	player_name.text = GameManager.player1_name
-	main_menu_scene = ResourceLoader.load("res://MainMenu.tscn")
+	main_menu_scene = ResourceLoader.load("res://UI_Menus/Main_Menu/main_menu.tscn")
 
 func _process(_delta: float) -> void:
 	count_down_label.text = str(ceil(countdown_timer.time_left))
@@ -43,7 +43,7 @@ func check_game_end() -> void:
 		#inimigo ganha 
 		game_end("Opponent")
 
-func game_end(winner) -> void:
+func game_end(_winner) -> void:
 	get_tree().change_scene_to_file("res://UI_Menus/Results_Menu/results_menu.tscn")
 	
 
