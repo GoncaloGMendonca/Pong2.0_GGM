@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://k6fhwluo1uoe"]
+[gd_scene load_steps=2 format=3 uid="uid://k6fhwluo1uoe"]
+
+[ext_resource type="Script" path="res://UI_Menus/Multiplayer_Menu/multiplayer_menu.gd" id="1_f4812"]
 
 [node name="Multiplayer_Menu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f4812")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -19,27 +22,33 @@ color = Color(1, 0.807843, 0.968627, 0.568627)
 
 [node name="Player1_Custom" type="VBoxContainer" parent="."]
 offset_left = 30.0
-offset_top = 34.0
+offset_top = 60.0
 offset_right = 536.0
-offset_bottom = 523.0
+offset_bottom = 549.0
+scale = Vector2(1.00334, 0.994377)
 
 [node name="Label" type="Label" parent="Player1_Custom"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Player 1 - Input Name and Change Color "
 
-[node name="TextEdit" type="TextEdit" parent="Player1_Custom"]
+[node name="P1_NameInput" type="TextEdit" parent="Player1_Custom"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 placeholder_text = "Enter Player 1 Text"
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="Player1_Custom"]
+[node name="P1_ColorPicker" type="ColorPickerButton" parent="Player1_Custom"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Choose the Color"
+color = Color(1, 1, 1, 1)
+edit_alpha = false
 
 [node name="Player2_Custom" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 585.0
-offset_top = 34.0
+offset_top = 60.0
 offset_right = 1091.0
 offset_bottom = 523.0
 
@@ -48,16 +57,18 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Player 2 - Input Name and Change Color "
 
-[node name="TextEdit" type="TextEdit" parent="Player2_Custom"]
+[node name="P2_NameInput" type="TextEdit" parent="Player2_Custom"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 placeholder_text = "Enter Player 1 Text"
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="Player2_Custom"]
+[node name="P2_ColorPicker" type="ColorPickerButton" parent="Player2_Custom"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Choose the Color"
 
-[node name="Button" type="Button" parent="."]
+[node name="StartGameMulti_Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -104,9 +115,13 @@ offset_right = 253.0
 offset_bottom = 24.0
 scale = Vector2(1.79206, 1.89428)
 
-[node name="TextEdit2" type="TextEdit" parent="."]
+[node name="M_MaxScore_Input" type="TextEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
 offset_left = 30.0
 offset_top = 572.0
 offset_right = 357.0
 offset_bottom = 616.0
 placeholder_text = "Enter the Number of Goals you Want"
+
+[connection signal="pressed" from="StartGameMulti_Button" to="." method="_on_start_game_multi_button_pressed"]

@@ -11,8 +11,8 @@ extends Control
 func _on_start_game_single_button_pressed() -> void:
 	GameManager.player1_name = p_1_name_input.text
 	GameManager.player1_color = p_1_color_picker.color
-	GameManager.max_score = max_score_input.text
-	get_tree().change_scene_to_file("res://Level/node.tscn")
+	GameManager.max_score = max_score_input.text.to_int()
+	get_tree().change_scene_to_file("res://Level/SinglePlayer_Map/SinglePlayer_Scene.tscn")
 
 
 func _on_backto_main_menu_pressed() -> void:

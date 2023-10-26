@@ -3,7 +3,7 @@ extends Node
 
 #var singleplayer_difficulty: String = "Easy"
 
-var max_score: String = "5"
+var max_score: int = 5
 
 var player1_name: String = "Player 1"
 var player1_color: Color = "Color(0.688, 0, 0.533)"

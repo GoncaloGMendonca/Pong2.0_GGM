@@ -1,20 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjtvnmsyk6qbs"]
 
-[ext_resource type="Script" path="res://Player/Player_script.gd" id="1_135ll"]
-[ext_resource type="Texture2D" uid="uid://fe1xiy3s2a4w" path="res://pong_assets/Paddle.png" id="2_uv222"]
+[ext_resource type="Script" path="res://Players/Player_1/Player_1_script.gd" id="1_ur23k"]
+[ext_resource type="Texture2D" uid="uid://fe1xiy3s2a4w" path="res://pong_assets/Paddle.png" id="2_3a4s4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pplt"]
 size = Vector2(31, 123)
 
 [node name="Player_Paddle" type="CharacterBody2D"]
-script = ExtResource("1_135ll")
+script = ExtResource("1_ur23k")
 metadata/_edit_group_ = true
 
 [node name="Player_Sprite" type="Sprite2D" parent="."]
 modulate = Color(0.818724, 0.568342, 0, 1)
 position = Vector2(7.5, -51.5)
 scale = Vector2(1, 0.968069)
-texture = ExtResource("2_uv222")
+texture = ExtResource("2_3a4s4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.5, -51.5)
