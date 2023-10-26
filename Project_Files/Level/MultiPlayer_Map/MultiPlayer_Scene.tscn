@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgrvw34p5x4xq"]
+[gd_scene load_steps=12 format=3 uid="uid://dgrvw34p5x4xq"]
 
 [ext_resource type="Script" path="res://Level/SinglePlayer_Map/SinglePlayer_Level.gd" id="1_yyavd"]
 [ext_resource type="FontFile" uid="uid://ctdelqmd7xqf6" path="res://pong_assets/PoetsenOne-Regular.ttf" id="2_vp8cg"]
-[ext_resource type="PackedScene" uid="uid://cjtvnmsyk6qbs" path="res://Player/Player_1_Scene.tscn" id="3_grru2"]
+[ext_resource type="PackedScene" uid="uid://cjtvnmsyk6qbs" path="res://Players/Player_1/Player_1_Scene.tscn" id="3_grru2"]
 [ext_resource type="PackedScene" uid="uid://y4ei0r3b7obj" path="res://Ball/ball.tscn" id="5_b2nfr"]
 [ext_resource type="AudioStream" uid="uid://bh230fxyvfmlp" path="res://pong_assets/ping_pong_8bit_beeep.ogg" id="6_ejc2s"]
+[ext_resource type="PackedScene" uid="uid://c40vcyms0f3ef" path="res://Players/Player_2/Player_2_Scene.tscn" id="7_73yba"]
 [ext_resource type="PackedScene" uid="uid://c2h2cu12psype" path="res://UI_Menus/Pause_Menu/pause_menu.tscn" id="7_204yw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_52nyx"]
@@ -100,6 +101,9 @@ label_settings = SubResource("LabelSettings_arw42")
 
 [node name="Player_Paddle" parent="." instance=ExtResource("3_grru2")]
 position = Vector2(31, 324)
+
+[node name="Player_Paddle2" parent="." instance=ExtResource("7_73yba")]
+position = Vector2(1067, 353)
 
 [node name="Wall_Bottom" type="StaticBody2D" parent="."]
 position = Vector2(31, 1000)

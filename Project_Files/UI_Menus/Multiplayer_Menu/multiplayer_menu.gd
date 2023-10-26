@@ -13,7 +13,7 @@ extends Control
 func _on_start_game_multi_button_pressed() -> void:
 	GameManager.player1_name = p_1_name_input.text
 	GameManager.player1_color = p_1_color_picker.color
-	GameManager.player2_name = p_1_name_input.text
-	GameManager.player2_color = p_1_color_picker.color
+	GameManager.player2_name = p_2_name_input.text
+	GameManager.player2_color = p_2_color_picker.color
 	GameManager.max_score = m_max_score_input.text.to_int()
 	get_tree().change_scene_to_file("res://Level/MultiPlayer_Map/MultiPlayer_Scene.tscn")

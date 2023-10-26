@@ -7,6 +7,7 @@
 size = Vector2(31, 123)
 
 [node name="Player_Paddle" type="CharacterBody2D"]
+position = Vector2(23, 7)
 script = ExtResource("1_sdbdr")
 metadata/_edit_group_ = true
 
