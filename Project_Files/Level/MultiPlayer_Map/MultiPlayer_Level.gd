@@ -1,6 +1,6 @@
 extends Node
 
-var player_score := 0
+var player1_score := 0
 var opponent_score := 0
 var paused = false
 
@@ -11,14 +11,18 @@ var paused = false
 @onready var countdown_timer: Timer = %"Countdown Timer"
 @onready var count_down_label: Label = %CountDownLabel
 @onready var score_sound: AudioStreamPlayer = %ScoreSound
-@onready var player_name: Label = %PlayerName
+
+@onready var multi_p_1_label: Label = %Multi_P1_Label
+@onready var multi_p_2_label: Label = %Multi_P2_Label
+
+
 @onready var pause_menu: Control = %PauseMenu
 
 var main_menu_scene: PackedScene
 
 func _ready() -> void:
-	player_name.text = GameManager.player1_name
-	
+	multi_p_1_label.text = GameManager.player1_name
+	multi_p_2_label.text = GameManager.player2_name
 	main_menu_scene = ResourceLoader.load("res://UI_Menus/Main_Menu/main_menu.tscn")
 
 func _process(_delta: float) -> void:
@@ -38,7 +42,7 @@ func pauseMenu():
 	paused = !paused 
 
 func check_game_end() -> void:
-	if player_score >= GameManager.max_score:
+	if player1_score >= GameManager.max_score:
 		#player ganha 
 		game_end("Player")
 	elif opponent_score >= GameManager.max_score:
@@ -66,8 +70,8 @@ func _on_wal_right_body_entered(body: Node2D) -> void:
 		ball.stop_moving()
 		countdown_timer.start()
 		count_down_label.show()
-		player_score += 1
-		player_label.text = str(player_score)
+		player1_score += 1
+		player_label.text = str(player1_score)
 		score_sound.play()
 		check_game_end()
 

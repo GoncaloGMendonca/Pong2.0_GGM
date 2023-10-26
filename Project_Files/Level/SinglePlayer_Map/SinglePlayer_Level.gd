@@ -12,8 +12,8 @@ var paused = false
 @onready var count_down_label: Label = %CountDownLabel
 @onready var score_sound: AudioStreamPlayer = %ScoreSound
 
-@onready var multi_p_1_label: Label = %Multi_P1_Label
-@onready var multi_p_2_label: Label = %Multi_P2_Label
+@onready var player_name: Label = %PlayerName
+
 
 
 @onready var pause_menu: Control = %PauseMenu
@@ -21,8 +21,7 @@ var paused = false
 var main_menu_scene: PackedScene
 
 func _ready() -> void:
-	multi_p_1_label.text = GameManager.player1_name
-	multi_p_2_label.text = GameManager.player2_name
+	player_name.text = GameManager.player1_name
 	main_menu_scene = ResourceLoader.load("res://UI_Menus/Main_Menu/main_menu.tscn")
 
 func _process(_delta: float) -> void:

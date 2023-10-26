@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dgrvw34p5x4xq"]
 
-[ext_resource type="Script" path="res://Level/SinglePlayer_Map/SinglePlayer_Level.gd" id="1_yyavd"]
+[ext_resource type="Script" path="res://Level/MultiPlayer_Map/MultiPlayer_Level.gd" id="1_k5wx0"]
 [ext_resource type="FontFile" uid="uid://ctdelqmd7xqf6" path="res://pong_assets/PoetsenOne-Regular.ttf" id="2_vp8cg"]
 [ext_resource type="PackedScene" uid="uid://cjtvnmsyk6qbs" path="res://Players/Player_1/Player_1_Scene.tscn" id="3_grru2"]
 [ext_resource type="PackedScene" uid="uid://y4ei0r3b7obj" path="res://Ball/ball.tscn" id="5_b2nfr"]
@@ -25,7 +25,7 @@ size = Vector2(1182, 29)
 size = Vector2(52, 639)
 
 [node name="Level" type="Node"]
-script = ExtResource("1_yyavd")
+script = ExtResource("1_k5wx0")
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
