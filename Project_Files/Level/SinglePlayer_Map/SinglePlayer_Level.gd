@@ -51,6 +51,7 @@ func check_game_end() -> void:
 func game_end(_winner) -> void:
 	get_tree().change_scene_to_file("res://UI_Menus/Results_Menu/results_menu.tscn")
 	
+	
 
 func _on_wall_left_body_entered(body: Node2D) -> void:
 	if body is Ball:

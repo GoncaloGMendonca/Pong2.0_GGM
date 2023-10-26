@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 
+@onready var result_label: Label = %Result_Label
 
 
 func _on_repeat_button_pressed() -> void:
