@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://k6fhwluo1uoe"]
+
+[node name="Multiplayer_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.807843, 0.968627, 0.568627)
+
+[node name="Player1_Custom" type="VBoxContainer" parent="."]
+offset_left = 30.0
+offset_top = 34.0
+offset_right = 536.0
+offset_bottom = 523.0
+
+[node name="Label" type="Label" parent="Player1_Custom"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Player 1 - Input Name and Change Color "
+
+[node name="TextEdit" type="TextEdit" parent="Player1_Custom"]
+layout_mode = 2
+size_flags_vertical = 4
+placeholder_text = "Enter Player 1 Text"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Player1_Custom"]
+layout_mode = 2
+text = "Choose the Color"
+
+[node name="Player2_Custom" type="VBoxContainer" parent="."]
+offset_left = 585.0
+offset_top = 34.0
+offset_right = 1091.0
+offset_bottom = 523.0
+
+[node name="Label" type="Label" parent="Player2_Custom"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Player 2 - Input Name and Change Color "
+
+[node name="TextEdit" type="TextEdit" parent="Player2_Custom"]
+layout_mode = 2
+size_flags_vertical = 4
+placeholder_text = "Enter Player 1 Text"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Player2_Custom"]
+layout_mode = 2
+text = "Choose the Color"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -76.0
+offset_right = 63.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start Game
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -102.0
+offset_right = 198.0
+offset_bottom = -76.0
+grow_vertical = 0
+text = "Max of Number Goals"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 820.0
+offset_top = -76.0
+offset_right = 997.0
+offset_bottom = -50.0
+grow_vertical = 0
+text = "Enable Time Run Mode"
+
+[node name="CheckButton" type="CheckButton" parent="Label2"]
+layout_mode = 0
+offset_left = 209.0
+offset_right = 253.0
+offset_bottom = 24.0
+scale = Vector2(1.79206, 1.89428)
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = 30.0
+offset_top = 572.0
+offset_right = 357.0
+offset_bottom = 616.0
+placeholder_text = "Enter the Number of Goals you Want"

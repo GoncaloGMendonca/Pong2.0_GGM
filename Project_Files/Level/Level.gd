@@ -4,6 +4,7 @@ var player_score := 0
 var opponent_score := 0
 var paused = false
 
+
 @onready var opponent_label: Label = %OppentScore
 @onready var player_label: Label = %PlayerScore
 @onready var ball := %Ball as Ball
@@ -17,6 +18,7 @@ var main_menu_scene: PackedScene
 
 func _ready() -> void:
 	player_name.text = GameManager.player1_name
+	
 	main_menu_scene = ResourceLoader.load("res://UI_Menus/Main_Menu/main_menu.tscn")
 
 func _process(_delta: float) -> void:
