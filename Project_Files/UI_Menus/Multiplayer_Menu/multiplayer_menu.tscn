@@ -21,6 +21,7 @@ grow_vertical = 2
 color = Color(1, 0.807843, 0.968627, 0.568627)
 
 [node name="Player1_Custom" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 30.0
 offset_top = 60.0
 offset_right = 536.0

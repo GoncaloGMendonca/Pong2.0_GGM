@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed := 400
+@export var speed := 450
 
 var direction := 0.0 
 
@@ -9,6 +9,7 @@ var direction := 0.0
 
 func _ready() -> void:
 	get_node("Player_Sprite").modulate = GameManager.player1_color
+	speed = GameManager.player1_speed
 
 func _physics_process(_delta: float) -> void:
 	position.x = 0

@@ -6,6 +6,10 @@ extends CharacterBody2D
 
 @onready var start_position := position
 
+
+func _ready() -> void:
+	speed = GameManager.cpu_speed
+
 func _physics_process(_delta:float) -> void:
 	velocity.x = 0
 	velocity.y = get_direction() * speed

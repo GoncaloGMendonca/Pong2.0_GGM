@@ -14,8 +14,6 @@ var paused = false
 
 @onready var player_name: Label = %PlayerName
 
-
-
 @onready var pause_menu: Control = %PauseMenu
 
 var main_menu_scene: PackedScene
