@@ -12,12 +12,13 @@ var cpu_speed: int = 10
 var player2_name: String = "Player 1"
 var player2_color: Color = "Color(0.688, 0, 0.533)"
 
+var winner 
 
-var difficulty_level: int = 0
+var difficulty_level: int = 1
 
 
 
-func _ready():
+func _process(delta: float) -> void:
 	set_speed_based_on_difficulty()
 	
 
@@ -27,11 +28,11 @@ func set_speed_based_on_difficulty():
 			player1_speed = 250
 			cpu_speed = 200
 		1:
-			player1_speed = 2
-			cpu_speed = 2
+			player1_speed = 450
+			cpu_speed = 400
 		2:
-			player1_speed = 0
-			cpu_speed = 0
+			player1_speed = 550
+			cpu_speed = 500
 		_:
 			print("Invalid difficulty level")
 
