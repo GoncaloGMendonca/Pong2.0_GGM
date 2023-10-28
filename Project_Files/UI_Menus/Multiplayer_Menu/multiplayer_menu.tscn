@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://k6fhwluo1uoe"]
+[gd_scene load_steps=4 format=3 uid="uid://k6fhwluo1uoe"]
 
 [ext_resource type="Script" path="res://UI_Menus/Multiplayer_Menu/multiplayer_menu.gd" id="1_f4812"]
+[ext_resource type="Theme" uid="uid://bkmxab2a5cohh" path="res://game_theme.tres" id="2_cda5k"]
+[ext_resource type="AudioStream" uid="uid://dsju0uv4wpeo7" path="res://pong_assets/Click_SFX.ogg" id="3_ls3io"]
 
 [node name="Multiplayer_Menu" type="Control"]
 layout_mode = 3
@@ -26,22 +28,28 @@ offset_left = 30.0
 offset_top = 60.0
 offset_right = 536.0
 offset_bottom = 549.0
-scale = Vector2(1.00334, 0.994377)
+scale = Vector2(0.903, 0.903)
+theme = ExtResource("2_cda5k")
 
 [node name="Label" type="Label" parent="Player1_Custom"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme = ExtResource("2_cda5k")
 text = "Player 1 - Input Name and Change Color "
 
 [node name="P1_NameInput" type="TextEdit" parent="Player1_Custom"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("2_cda5k")
 placeholder_text = "Enter Player 1 Text"
+scroll_fit_content_height = true
+minimap_draw = true
 
 [node name="P1_ColorPicker" type="ColorPickerButton" parent="Player1_Custom"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_cda5k")
 text = "Choose the Color"
 color = Color(1, 1, 1, 1)
 edit_alpha = false
@@ -52,21 +60,27 @@ offset_left = 585.0
 offset_top = 60.0
 offset_right = 1091.0
 offset_bottom = 523.0
+scale = Vector2(0.903, 0.903)
+theme = ExtResource("2_cda5k")
 
 [node name="Label" type="Label" parent="Player2_Custom"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme = ExtResource("2_cda5k")
 text = "Player 2 - Input Name and Change Color "
 
 [node name="P2_NameInput" type="TextEdit" parent="Player2_Custom"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-placeholder_text = "Enter Player 1 Text"
+theme = ExtResource("2_cda5k")
+placeholder_text = "Enter Player 2 Text"
+scroll_fit_content_height = true
 
 [node name="P2_ColorPicker" type="ColorPickerButton" parent="Player2_Custom"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_cda5k")
 text = "Choose the Color"
 
 [node name="StartGameMulti_Button" type="Button" parent="."]
@@ -76,16 +90,19 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -64.0
+offset_left = -96.0
 offset_top = -76.0
-offset_right = 63.0
+offset_right = 59.0
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.15784, 1.32398)
+theme = ExtResource("2_cda5k")
+theme_override_font_sizes/font_size = 20
 text = "Start Game
 "
 
-[node name="Label" type="Label" parent="."]
+[node name="Max_Score_Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -95,17 +112,27 @@ offset_top = -102.0
 offset_right = 198.0
 offset_bottom = -76.0
 grow_vertical = 0
+theme = ExtResource("2_cda5k")
 text = "Max of Number Goals"
+
+[node name="M_MaxScore_Input" type="TextEdit" parent="Max_Score_Label"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 42.0
+offset_right = 327.0
+offset_bottom = 86.0
+theme = ExtResource("2_cda5k")
+placeholder_text = "Enter the Max of Goals "
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 820.0
-offset_top = -76.0
-offset_right = 997.0
-offset_bottom = -50.0
+offset_left = 819.0
+offset_top = -72.0
+offset_right = 996.0
+offset_bottom = -46.0
 grow_vertical = 0
 text = "Enable Time Run Mode"
 
@@ -116,13 +143,11 @@ offset_right = 253.0
 offset_bottom = 24.0
 scale = Vector2(1.79206, 1.89428)
 
-[node name="M_MaxScore_Input" type="TextEdit" parent="."]
+[node name="button_SFX" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 30.0
-offset_top = 572.0
-offset_right = 357.0
-offset_bottom = 616.0
-placeholder_text = "Enter the Number of Goals you Want"
+stream = ExtResource("3_ls3io")
+volume_db = 3.014
+pitch_scale = 1.14
 
+[connection signal="button_down" from="StartGameMulti_Button" to="." method="_on_start_game_multi_button_button_down"]
 [connection signal="pressed" from="StartGameMulti_Button" to="." method="_on_start_game_multi_button_pressed"]

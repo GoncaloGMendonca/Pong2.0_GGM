@@ -5,6 +5,7 @@ extends Control
 @onready var p_1_color_picker: ColorPickerButton = %P1_ColorPicker
 @onready var max_score_input: TextEdit = %MaxScore_Input
 @onready var teste_label: Label = $TESTE_LABEL
+@onready var button_sfx: AudioStreamPlayer = %button_SFX
 
 
 
@@ -37,3 +38,11 @@ func _on_option_button_item_selected(index: int) -> void:
 ###	print("Difficulty level:", GameManager.difficulty_level)
 ##	emit_signal("difficulty_level_changed", 2)
 ##
+
+
+func _on_start_game_single_button_button_down() -> void:
+	button_sfx.play() 
+
+
+func _on_backto_main_menu_button_down() -> void:
+	button_sfx.play() 

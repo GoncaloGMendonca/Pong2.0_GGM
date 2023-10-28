@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0es1sf8edj1j"]
+[gd_scene load_steps=5 format=3 uid="uid://c0es1sf8edj1j"]
 
 [ext_resource type="Script" path="res://UI_Menus/Main_Menu/main_menu.gd" id="1_vg6sb"]
+[ext_resource type="AudioStream" uid="uid://dsju0uv4wpeo7" path="res://pong_assets/Click_SFX.ogg" id="3_3u6tw"]
+[ext_resource type="AudioStream" uid="uid://cmtbrx8sxb4ld" path="res://pong_assets/main_menu_music.ogg" id="3_er1o4"]
+[ext_resource type="Theme" uid="uid://bkmxab2a5cohh" path="res://game_theme.tres" id="4_ygagg"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,43 +16,71 @@ script = ExtResource("1_vg6sb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = -1
+anchor_left = 0.242188
+anchor_right = 0.757813
 anchor_bottom = 1.0
-offset_left = -192.0
-offset_right = 216.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_ygagg")
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Title_Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "My 
-Pong 
-Game "
+theme = ExtResource("4_ygagg")
+theme_override_font_sizes/font_size = 94
+text = "Pong 2.0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GGM_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_ygagg")
+text = "By Gonçalo Mendonça"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.33
 
 [node name="SinglePlayerButton" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_ygagg")
 text = "SinglePlayer"
 
 [node name="MultiPlayerButton" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_ygagg")
 text = "MultiPlayer
 "
 
 [node name="QuitGameButton" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_ygagg")
 text = "Quit
 "
 
+[node name="button_SFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_3u6tw")
+volume_db = 3.014
+pitch_scale = 1.14
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_er1o4")
+volume_db = -9.043
+autoplay = true
+
+[connection signal="button_down" from="VBoxContainer/VBoxContainer/SinglePlayerButton" to="." method="_on_single_player_button_button_down"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/SinglePlayerButton" to="." method="_on_single_player_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/MultiPlayerButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="button_down" from="VBoxContainer/VBoxContainer/MultiPlayerButton" to="." method="_on_multi_player_button_button_down"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/MultiPlayerButton" to="." method="_on_multi_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/MultiPlayerButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="button_down" from="VBoxContainer/VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_button_down"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]

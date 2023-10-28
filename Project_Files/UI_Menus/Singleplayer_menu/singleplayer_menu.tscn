@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cflfyih4jooq5"]
+[gd_scene load_steps=4 format=3 uid="uid://cflfyih4jooq5"]
 
 [ext_resource type="Script" path="res://UI_Menus/Singleplayer_menu/singleplayer_menu.gd" id="1_1xlo4"]
+[ext_resource type="Theme" uid="uid://bkmxab2a5cohh" path="res://game_theme.tres" id="2_pxm13"]
+[ext_resource type="AudioStream" uid="uid://dsju0uv4wpeo7" path="res://pong_assets/Click_SFX.ogg" id="3_46kpb"]
 
 [node name="Singleplayer_Menu" type="Control"]
 layout_mode = 3
@@ -27,6 +29,7 @@ offset_top = 60.0
 offset_right = 536.0
 offset_bottom = 549.0
 scale = Vector2(1.00334, 0.994377)
+theme = ExtResource("2_pxm13")
 
 [node name="Label" type="Label" parent="Player1_Custom"]
 layout_mode = 2
@@ -37,13 +40,20 @@ text = "Player 1 - Input Name and Change Color "
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("2_pxm13")
 placeholder_text = "Enter Player 1 Text"
+scroll_fit_content_height = true
+
+[node name="Label2" type="Label" parent="Player1_Custom"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Choose Color Below "
 
 [node name="P1_ColorPicker" type="ColorPickerButton" parent="Player1_Custom"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_pxm13")
 text = "Choose the Color"
-color = Color(1, 1, 1, 1)
 edit_alpha = false
 
 [node name="Dif_Selector" type="VBoxContainer" parent="."]
@@ -52,19 +62,24 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -576.0
+offset_left = -513.0
 offset_top = 60.0
-offset_right = -16.0
+offset_right = 47.0001
 offset_bottom = 3.0
 grow_horizontal = 0
 grow_vertical = 2
+scale = Vector2(0.84, 0.84)
+theme = ExtResource("2_pxm13")
 
 [node name="Label" type="Label" parent="Dif_Selector"]
 layout_mode = 2
-text = "Select Dificult "
+theme = ExtResource("2_pxm13")
+theme_override_font_sizes/font_size = 40
+text = "Select Dificult Below"
 
 [node name="OptionButton" type="OptionButton" parent="Dif_Selector"]
 layout_mode = 2
+theme = ExtResource("2_pxm13")
 item_count = 3
 popup/item_0/text = "Easy"
 popup/item_0/id = 0
@@ -83,6 +98,7 @@ offset_top = -102.0
 offset_right = 198.0
 offset_bottom = -76.0
 grow_vertical = 0
+theme = ExtResource("2_pxm13")
 text = "Max of Number Goals"
 
 [node name="MaxScore_Input" type="TextEdit" parent="."]
@@ -92,7 +108,8 @@ offset_left = 30.0
 offset_top = 572.0
 offset_right = 357.0
 offset_bottom = 616.0
-placeholder_text = "Enter the Number of Goals you Want"
+theme = ExtResource("2_pxm13")
+placeholder_text = "Enter the Max of Goals "
 
 [node name="StartGameSingle_Button" type="Button" parent="."]
 layout_mode = 1
@@ -101,24 +118,36 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -76.0
-offset_right = 63.0
-offset_bottom = -36.0
+offset_left = -69.0
+offset_top = -92.0001
+offset_right = 86.0
+offset_bottom = -52.0001
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.25077, 1.35831)
+theme = ExtResource("2_pxm13")
+theme_override_font_sizes/font_size = 21
 text = "Start Game
 "
 
 [node name="Backto_MainMenu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 937.0
+offset_left = 806.0
 offset_top = 576.0
-offset_right = 1125.0
-offset_bottom = 607.0
-text = "<--- Back To Main Menu
+offset_right = 1109.0
+offset_bottom = 612.0
+theme = ExtResource("2_pxm13")
+text = "Back To Main Menu
 "
 
+[node name="button_SFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_46kpb")
+volume_db = 3.014
+pitch_scale = 1.14
+
 [connection signal="item_selected" from="Dif_Selector/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="button_down" from="StartGameSingle_Button" to="." method="_on_start_game_single_button_button_down"]
 [connection signal="pressed" from="StartGameSingle_Button" to="." method="_on_start_game_single_button_pressed"]
+[connection signal="button_down" from="Backto_MainMenu" to="." method="_on_backto_main_menu_button_down"]
 [connection signal="pressed" from="Backto_MainMenu" to="." method="_on_backto_main_menu_pressed"]

@@ -8,6 +8,7 @@ extends Control
 @onready var p_2_color_picker: ColorPickerButton = %P2_ColorPicker
 
 @onready var m_max_score_input: TextEdit = %M_MaxScore_Input
+@onready var button_sfx: AudioStreamPlayer = %button_SFX
 
 
 func _on_start_game_multi_button_pressed() -> void:
@@ -17,3 +18,7 @@ func _on_start_game_multi_button_pressed() -> void:
 	GameManager.player2_color = p_2_color_picker.color
 	GameManager.max_score = m_max_score_input.text.to_int()
 	get_tree().change_scene_to_file("res://Level/MultiPlayer_Map/MultiPlayer_Scene.tscn")
+
+
+func _on_start_game_multi_button_button_down() -> void:
+	button_sfx.play() 

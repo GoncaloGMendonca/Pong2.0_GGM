@@ -1,22 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7vl4m60d063k"]
+[gd_scene load_steps=11 format=3 uid="uid://b7vl4m60d063k"]
 
 [ext_resource type="Script" path="res://Level/SinglePlayer_Map/SinglePlayer_Level.gd" id="1_t8l72"]
-[ext_resource type="FontFile" uid="uid://ctdelqmd7xqf6" path="res://pong_assets/PoetsenOne-Regular.ttf" id="2_5wfcg"]
+[ext_resource type="Theme" uid="uid://bkmxab2a5cohh" path="res://game_theme.tres" id="2_k58ea"]
 [ext_resource type="PackedScene" uid="uid://cjtvnmsyk6qbs" path="res://Players/Player_1/Player_1_Scene.tscn" id="3_fnu2h"]
 [ext_resource type="PackedScene" uid="uid://d4cg608s5otey" path="res://opppent_paddle.tscn" id="4_3ppfe"]
 [ext_resource type="PackedScene" uid="uid://y4ei0r3b7obj" path="res://Ball/ball.tscn" id="5_asfpr"]
+[ext_resource type="AudioStream" uid="uid://d4lgt55br7xw0" path="res://pong_assets/gameplay_music.ogg" id="6_k8ogj"]
 [ext_resource type="AudioStream" uid="uid://bh230fxyvfmlp" path="res://pong_assets/ping_pong_8bit_beeep.ogg" id="6_rj7av"]
 [ext_resource type="PackedScene" uid="uid://c2h2cu12psype" path="res://UI_Menus/Pause_Menu/pause_menu.tscn" id="7_3ptu4"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_52nyx"]
-font = ExtResource("2_5wfcg")
-font_size = 65
-font_color = Color(0, 0.815686, 0.8, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_arw42"]
-font = ExtResource("2_5wfcg")
-font_size = 45
-font_color = Color(0.501961, 0.815686, 0.0627451, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5unsx"]
 size = Vector2(1182, 29)
@@ -48,8 +39,9 @@ offset_right = 125.0
 offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_k58ea")
+theme_override_font_sizes/font_size = 45
 text = "CountDown"
-label_settings = SubResource("LabelSettings_52nyx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -60,15 +52,17 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_k58ea")
 theme_override_constants/separation = 150
 alignment = 1
 
 [node name="PlayerScore" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_k58ea")
+theme_override_font_sizes/font_size = 35
 text = "0
 "
-label_settings = SubResource("LabelSettings_arw42")
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 modulate = Color(0.988235, 1, 1, 0)
@@ -77,15 +71,18 @@ layout_mode = 2
 [node name="OppentScore" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "0"
-label_settings = SubResource("LabelSettings_arw42")
 
 [node name="PlayerName" type="Label" parent="."]
 unique_name_in_owner = true
-offset_right = 30.0
-offset_bottom = 57.0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 178.0
+offset_bottom = 70.0
+theme = ExtResource("2_k58ea")
+theme_override_font_sizes/font_size = 34
 text = "Player Name"
-label_settings = SubResource("LabelSettings_arw42")
 
 [node name="CPUName" type="Label" parent="."]
 unique_name_in_owner = true
@@ -93,11 +90,13 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -129.0
+offset_top = 13.0
 offset_right = -17.0
-offset_bottom = 57.0
+offset_bottom = 70.0
 grow_horizontal = 0
-text = "CPU"
-label_settings = SubResource("LabelSettings_arw42")
+theme = ExtResource("2_k58ea")
+theme_override_font_sizes/font_size = 34
+text = "cpu"
 
 [node name="Player_Paddle" parent="." instance=ExtResource("3_fnu2h")]
 position = Vector2(31, 324)
@@ -143,6 +142,11 @@ unique_name_in_owner = true
 wait_time = 4.0
 one_shot = true
 autostart = true
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_k8ogj")
+volume_db = -15.826
+autoplay = true
 
 [node name="ScoreSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
