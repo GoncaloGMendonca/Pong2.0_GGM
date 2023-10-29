@@ -19,6 +19,15 @@ func _on_start_game_multi_button_pressed() -> void:
 	GameManager.max_score = m_max_score_input.text.to_int()
 	get_tree().change_scene_to_file("res://Level/MultiPlayer_Map/MultiPlayer_Scene.tscn")
 
+func _on_backto_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://UI_Menus/Main_Menu/main_menu.tscn")
+
+
 
 func _on_start_game_multi_button_button_down() -> void:
 	button_sfx.play() 
+
+
+
+func _on_backto_main_menu_button_down() -> void:
+	button_sfx.play()  # Replace with function body.

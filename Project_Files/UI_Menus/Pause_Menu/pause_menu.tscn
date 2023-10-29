@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2h2cu12psype"]
+[gd_scene load_steps=4 format=3 uid="uid://c2h2cu12psype"]
 
 [ext_resource type="Script" path="res://UI_Menus/Pause_Menu/pause_menu.gd" id="1_1fr4s"]
 [ext_resource type="Theme" uid="uid://bkmxab2a5cohh" path="res://game_theme.tres" id="2_dvlpp"]
+[ext_resource type="AudioStream" uid="uid://dsju0uv4wpeo7" path="res://pong_assets/Click_SFX.ogg" id="3_fhvhw"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -19,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.254902, 0.556863, 0, 0.94902)
+color = Color(0.117647, 0.290196, 0, 0.482353)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BackGround"]
 layout_mode = 1
@@ -54,5 +55,13 @@ size_flags_vertical = 3
 theme = ExtResource("2_dvlpp")
 text = "Quit to Main Menu"
 
+[node name="button_SFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_fhvhw")
+volume_db = 3.014
+pitch_scale = 1.14
+
+[connection signal="button_down" from="BackGround/VBoxContainer/Resume_Button" to="." method="_on_resume_button_button_down"]
 [connection signal="pressed" from="BackGround/VBoxContainer/Resume_Button" to="." method="_on_resume_button_pressed"]
+[connection signal="button_down" from="BackGround/VBoxContainer/Quit_Button" to="." method="_on_quit_button_button_down"]
 [connection signal="pressed" from="BackGround/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]

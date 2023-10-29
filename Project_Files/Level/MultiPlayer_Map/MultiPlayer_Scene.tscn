@@ -1,22 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgrvw34p5x4xq"]
+[gd_scene load_steps=11 format=3 uid="uid://dgrvw34p5x4xq"]
 
 [ext_resource type="Script" path="res://Level/MultiPlayer_Map/MultiPlayer_Level.gd" id="1_k5wx0"]
-[ext_resource type="FontFile" uid="uid://ctdelqmd7xqf6" path="res://pong_assets/PoetsenOne-Regular.ttf" id="2_vp8cg"]
+[ext_resource type="Texture2D" uid="uid://bor0tgqnls2od" path="res://pong_assets/fundo_v2.png" id="2_b64gt"]
 [ext_resource type="PackedScene" uid="uid://cjtvnmsyk6qbs" path="res://Players/Player_1/Player_1_Scene.tscn" id="3_grru2"]
+[ext_resource type="Theme" uid="uid://bkmxab2a5cohh" path="res://game_theme.tres" id="3_u7oex"]
 [ext_resource type="PackedScene" uid="uid://y4ei0r3b7obj" path="res://Ball/ball.tscn" id="5_b2nfr"]
 [ext_resource type="AudioStream" uid="uid://bh230fxyvfmlp" path="res://pong_assets/ping_pong_8bit_beeep.ogg" id="6_ejc2s"]
 [ext_resource type="PackedScene" uid="uid://c40vcyms0f3ef" path="res://Players/Player_2/Player_2_Scene.tscn" id="7_73yba"]
 [ext_resource type="PackedScene" uid="uid://c2h2cu12psype" path="res://UI_Menus/Pause_Menu/pause_menu.tscn" id="7_204yw"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_52nyx"]
-font = ExtResource("2_vp8cg")
-font_size = 65
-font_color = Color(0, 0.815686, 0.8, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_arw42"]
-font = ExtResource("2_vp8cg")
-font_size = 45
-font_color = Color(0.501961, 0.815686, 0.0627451, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5unsx"]
 size = Vector2(1182, 29)
@@ -27,13 +18,28 @@ size = Vector2(52, 639)
 [node name="Level" type="Node"]
 script = ExtResource("1_k5wx0")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b64gt")
+
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.317647, 0.101961, 0.305882, 1)
+color = Color(0.133333, 0.133333, 0.133333, 0.2)
+
+[node name="Background2" type="ColorRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+color = Color(0.133333, 0.133333, 0.133333, 0.52549)
 
 [node name="CountDownLabel" type="Label" parent="."]
 unique_name_in_owner = true
@@ -48,8 +54,9 @@ offset_right = 125.0
 offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_u7oex")
+theme_override_font_sizes/font_size = 45
 text = "CountDown"
-label_settings = SubResource("LabelSettings_52nyx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -66,9 +73,10 @@ alignment = 1
 [node name="PlayerScore" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_u7oex")
+theme_override_font_sizes/font_size = 35
 text = "0
 "
-label_settings = SubResource("LabelSettings_arw42")
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 modulate = Color(0.988235, 1, 1, 0)
@@ -77,27 +85,32 @@ layout_mode = 2
 [node name="OppentScore" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_u7oex")
+theme_override_font_sizes/font_size = 35
 text = "0"
-label_settings = SubResource("LabelSettings_arw42")
 
 [node name="Multi_P1_Label" type="Label" parent="."]
 unique_name_in_owner = true
-offset_right = 30.0
-offset_bottom = 57.0
+offset_top = 17.0
+offset_right = 242.0
+offset_bottom = 74.0
+theme = ExtResource("3_u7oex")
+theme_override_font_sizes/font_size = 34
 text = "Player 1 Name"
-label_settings = SubResource("LabelSettings_arw42")
 
 [node name="Multi_P2_Label" type="Label" parent="."]
 unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -129.0
-offset_right = -17.0
-offset_bottom = 57.0
+offset_left = -267.0
+offset_top = 17.0
+offset_right = -14.0
+offset_bottom = 74.0
 grow_horizontal = 0
+theme = ExtResource("3_u7oex")
+theme_override_font_sizes/font_size = 34
 text = "Player 2 Name"
-label_settings = SubResource("LabelSettings_arw42")
 
 [node name="Player_Paddle" parent="." instance=ExtResource("3_grru2")]
 position = Vector2(31, 324)

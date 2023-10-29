@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://y4ei0r3b7obj"]
+[gd_scene load_steps=6 format=3 uid="uid://y4ei0r3b7obj"]
 
 [ext_resource type="Texture2D" uid="uid://tub3ldftprvb" path="res://pong_assets/Ball.png" id="1_71358"]
 [ext_resource type="Script" path="res://Ball/ball.gd" id="1_rs8fh"]
+[ext_resource type="Texture2D" uid="uid://cbxnjdsm01n18" path="res://pong_assets/bola_sprite.png" id="2_uy4qm"]
 [ext_resource type="AudioStream" uid="uid://excedpo32okh" path="res://pong_assets/ping_pong_8bit_plop.ogg" id="3_w02fa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ggivd"]
@@ -13,8 +14,13 @@ script = ExtResource("1_rs8fh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ggivd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.5699, 0.268828, 0.680895, 1)
 texture = ExtResource("1_71358")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_uy4qm")
 
 [node name="CollisionSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

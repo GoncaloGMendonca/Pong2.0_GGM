@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4cg608s5otey"]
 
-[ext_resource type="Texture2D" uid="uid://fe1xiy3s2a4w" path="res://pong_assets/Paddle.png" id="1_gnfd2"]
 [ext_resource type="Script" path="res://opppent_paddle.gd" id="1_nfws6"]
+[ext_resource type="Texture2D" uid="uid://tvcjmqy7p0sr" path="res://pong_assets/Paddle_V4.png" id="2_ttu63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pplt"]
 size = Vector2(31, 123)
@@ -12,7 +12,8 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(7.5, -51.5)
-texture = ExtResource("1_gnfd2")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_ttu63")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.5, -51.5)

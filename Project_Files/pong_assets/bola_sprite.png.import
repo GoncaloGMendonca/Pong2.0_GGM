@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fe1xiy3s2a4w"
-path="res://.godot/imported/Paddle.png-3b11a8597232c243ff0396cd5a6ba914.ctex"
+uid="uid://cbxnjdsm01n18"
+path="res://.godot/imported/bola_sprite.png-c9794eed9677cc88feb174ee7dd7a77e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pong_assets/Paddle.png"
-dest_files=["res://.godot/imported/Paddle.png-3b11a8597232c243ff0396cd5a6ba914.ctex"]
+source_file="res://pong_assets/bola_sprite.png"
+dest_files=["res://.godot/imported/bola_sprite.png-c9794eed9677cc88feb174ee7dd7a77e.ctex"]
 
 [params]
 

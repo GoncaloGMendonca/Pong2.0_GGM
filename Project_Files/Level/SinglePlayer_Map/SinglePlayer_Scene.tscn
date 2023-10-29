@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7vl4m60d063k"]
+[gd_scene load_steps=12 format=3 uid="uid://b7vl4m60d063k"]
 
 [ext_resource type="Script" path="res://Level/SinglePlayer_Map/SinglePlayer_Level.gd" id="1_t8l72"]
+[ext_resource type="Texture2D" uid="uid://bor0tgqnls2od" path="res://pong_assets/fundo_v2.png" id="2_esw88"]
 [ext_resource type="Theme" uid="uid://bkmxab2a5cohh" path="res://game_theme.tres" id="2_k58ea"]
 [ext_resource type="PackedScene" uid="uid://cjtvnmsyk6qbs" path="res://Players/Player_1/Player_1_Scene.tscn" id="3_fnu2h"]
 [ext_resource type="PackedScene" uid="uid://d4cg608s5otey" path="res://opppent_paddle.tscn" id="4_3ppfe"]
@@ -18,13 +19,28 @@ size = Vector2(52, 639)
 [node name="Level" type="Node"]
 script = ExtResource("1_t8l72")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_esw88")
+
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.317647, 0.101961, 0.305882, 1)
+color = Color(0.133333, 0.133333, 0.133333, 0.2)
+
+[node name="Background2" type="ColorRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+color = Color(0.133333, 0.133333, 0.133333, 0.52549)
 
 [node name="CountDownLabel" type="Label" parent="."]
 unique_name_in_owner = true
