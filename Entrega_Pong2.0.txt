@@ -1,0 +1,12 @@
+Trabalho Realizado por: Gonçalo Mendonça a22102498
+
+Link para o Repositorio De Github: https://github.com/GoncaloGMendonca/Pong2.0_GGM
+
+
+Instruções do Jogo
+
+Controls
+Player 1: Setas de Cima e Baixo
+
+Player 2: Teclas W e S 
+
