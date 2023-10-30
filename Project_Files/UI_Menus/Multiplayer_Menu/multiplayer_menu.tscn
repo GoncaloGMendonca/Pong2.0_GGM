@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://k6fhwluo1uoe"]
+[gd_scene load_steps=6 format=3 uid="uid://k6fhwluo1uoe"]
 
 [ext_resource type="Script" path="res://UI_Menus/Multiplayer_Menu/multiplayer_menu.gd" id="1_f4812"]
 [ext_resource type="Texture2D" uid="uid://cpsngc1yctqak" path="res://pong_assets/Main_Menu_fundo.png" id="2_1b1p7"]
 [ext_resource type="Theme" uid="uid://bkmxab2a5cohh" path="res://game_theme.tres" id="2_cda5k"]
 [ext_resource type="AudioStream" uid="uid://dsju0uv4wpeo7" path="res://pong_assets/Click_SFX.ogg" id="3_ls3io"]
+[ext_resource type="AudioStream" uid="uid://cmtbrx8sxb4ld" path="res://pong_assets/main_menu_music.ogg" id="5_immq1"]
 
 [node name="Multiplayer_Menu" type="Control"]
 layout_mode = 3
@@ -160,6 +161,7 @@ volume_db = 3.014
 pitch_scale = 1.14
 
 [node name="Backto_MainMenu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 816.0
 offset_top = 576.0
 offset_right = 1119.0
@@ -167,6 +169,12 @@ offset_bottom = 612.0
 theme = ExtResource("2_cda5k")
 text = "Back To Main Menu
 "
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_immq1")
+volume_db = -9.043
+autoplay = true
 
 [connection signal="button_down" from="StartGameMulti_Button" to="." method="_on_start_game_multi_button_button_down"]
 [connection signal="pressed" from="StartGameMulti_Button" to="." method="_on_start_game_multi_button_pressed"]

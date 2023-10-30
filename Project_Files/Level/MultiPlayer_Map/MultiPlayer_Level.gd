@@ -43,10 +43,10 @@ func pauseMenu():
 
 func check_game_end() -> void:
 	if player1_score >= GameManager.max_score:
-		#player ganha 
+		GameManager.winner = GameManager.player1_name 
 		game_end("Player")
 	elif opponent_score >= GameManager.max_score:
-		#inimigo ganha 
+		GameManager.winner = GameManager.player2_name 
 		game_end("Opponent")
 
 func game_end(_winner) -> void:

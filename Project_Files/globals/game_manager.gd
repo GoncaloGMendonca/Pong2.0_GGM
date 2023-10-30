@@ -1,7 +1,6 @@
 extends Node
 
 
-#var singleplayer_difficulty: String = "Easy"
 
 var max_score: int = 5
 
@@ -9,10 +8,10 @@ var player1_name: String = "Player 1"
 var player1_color: Color = "Color(0.688, 0, 0.533)"
 var player1_speed: int = 450
 var cpu_speed: int = 400
-var player2_name: String = "Player 1"
+var player2_name: String = "Player 2"
 var player2_color: Color = "Color(0.688, 0, 0.533)"
 
-var winner 
+var winner: String = "TESTE PLAYER" 
 
 var difficulty_level: int = 1
 

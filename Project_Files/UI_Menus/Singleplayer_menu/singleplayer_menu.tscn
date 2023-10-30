@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cflfyih4jooq5"]
+[gd_scene load_steps=6 format=3 uid="uid://cflfyih4jooq5"]
 
 [ext_resource type="Script" path="res://UI_Menus/Singleplayer_menu/singleplayer_menu.gd" id="1_1xlo4"]
 [ext_resource type="Texture2D" uid="uid://cpsngc1yctqak" path="res://pong_assets/Main_Menu_fundo.png" id="2_oe0xi"]
 [ext_resource type="Theme" uid="uid://bkmxab2a5cohh" path="res://game_theme.tres" id="2_pxm13"]
 [ext_resource type="AudioStream" uid="uid://dsju0uv4wpeo7" path="res://pong_assets/Click_SFX.ogg" id="3_46kpb"]
+[ext_resource type="AudioStream" uid="uid://cmtbrx8sxb4ld" path="res://pong_assets/main_menu_music.ogg" id="5_fv13r"]
 
 [node name="Singleplayer_Menu" type="Control"]
 layout_mode = 3
@@ -90,6 +91,7 @@ text = "Select Dificult Below"
 [node name="OptionButton" type="OptionButton" parent="Dif_Selector"]
 layout_mode = 2
 theme = ExtResource("2_pxm13")
+alignment = 1
 item_count = 3
 popup/item_0/text = "Easy"
 popup/item_0/id = 0
@@ -155,6 +157,12 @@ unique_name_in_owner = true
 stream = ExtResource("3_46kpb")
 volume_db = 3.014
 pitch_scale = 1.14
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_fv13r")
+volume_db = -9.043
+autoplay = true
 
 [connection signal="item_selected" from="Dif_Selector/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="button_down" from="StartGameSingle_Button" to="." method="_on_start_game_single_button_button_down"]
