@@ -140,19 +140,21 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 57.0
-offset_top = -170.0
-offset_right = 234.0
-offset_bottom = -144.0
+offset_left = 30.0
+offset_top = -222.0
+offset_right = 326.0
+offset_bottom = -180.0
 grow_vertical = 0
+theme = ExtResource("2_cda5k")
 text = "Enable Time Run Mode"
 
 [node name="CheckButton" type="CheckButton" parent="Label2"]
 layout_mode = 0
-offset_left = 209.0
-offset_right = 253.0
+offset_left = 319.0
+offset_right = 363.0
 offset_bottom = 24.0
 scale = Vector2(1.79206, 1.89428)
+theme = ExtResource("2_cda5k")
 
 [node name="button_SFX" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
@@ -178,5 +180,6 @@ autoplay = true
 
 [connection signal="button_down" from="StartGameMulti_Button" to="." method="_on_start_game_multi_button_button_down"]
 [connection signal="pressed" from="StartGameMulti_Button" to="." method="_on_start_game_multi_button_pressed"]
+[connection signal="toggled" from="Label2/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="button_down" from="Backto_MainMenu" to="." method="_on_backto_main_menu_button_down"]
 [connection signal="pressed" from="Backto_MainMenu" to="." method="_on_backto_main_menu_pressed"]

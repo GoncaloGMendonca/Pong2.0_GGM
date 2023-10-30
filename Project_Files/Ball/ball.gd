@@ -12,7 +12,8 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 		collision_sound.play() 
-		
+		if collision.get_collider() is StaticBody2D: 
+			velocity *= 1.1
 
 
 func stop_moving() -> void:

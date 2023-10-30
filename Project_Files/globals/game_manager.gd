@@ -15,7 +15,9 @@ var winner: String = "TESTE PLAYER"
 
 var difficulty_level: int = 1
 
+var IsTimemode : bool = false
 
+#var timegame_duration_seconds: int = 120
 
 func _process(delta: float) -> void:
 	set_speed_based_on_difficulty()

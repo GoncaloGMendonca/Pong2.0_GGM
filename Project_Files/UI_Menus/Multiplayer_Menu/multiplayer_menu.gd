@@ -31,3 +31,13 @@ func _on_start_game_multi_button_button_down() -> void:
 
 func _on_backto_main_menu_button_down() -> void:
 	button_sfx.play()  # Replace with function body.
+
+
+func _on_check_button_toggled(button_pressed: bool) -> void:
+	if button_pressed:
+		GameManager.IsTimemode = true
+		print("CheckButton is checked")
+	else:
+		GameManager.IsTimemode = false
+		print("CheckButton is UNchecked")
+
