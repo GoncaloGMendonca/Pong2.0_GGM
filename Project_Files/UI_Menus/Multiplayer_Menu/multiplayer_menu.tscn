@@ -62,7 +62,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_cda5k")
 text = "Choose the Color"
-color = Color(1, 1, 1, 1)
+color = Color(0.898039, 0.498039, 0.682353, 1)
 edit_alpha = false
 
 [node name="Player2_Custom" type="VBoxContainer" parent="."]
@@ -93,6 +93,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_cda5k")
 text = "Choose the Color"
+color = Color(0.282353, 0.835294, 0.682353, 1)
 
 [node name="StartGameMulti_Button" type="Button" parent="."]
 layout_mode = 1
@@ -133,6 +134,7 @@ offset_top = 42.0
 offset_right = 327.0
 offset_bottom = 86.0
 theme = ExtResource("2_cda5k")
+text = "5"
 placeholder_text = "Enter the Max of Goals "
 
 [node name="Label2" type="Label" parent="."]
@@ -148,11 +150,12 @@ grow_vertical = 0
 theme = ExtResource("2_cda5k")
 text = "Enable Time Run Mode"
 
-[node name="CheckButton" type="CheckButton" parent="Label2"]
+[node name="CheckButton" type="CheckButton" parent="."]
 layout_mode = 0
-offset_left = 319.0
-offset_right = 363.0
-offset_bottom = 24.0
+offset_left = 349.0
+offset_top = 414.0
+offset_right = 393.0
+offset_bottom = 438.0
 scale = Vector2(1.79206, 1.89428)
 theme = ExtResource("2_cda5k")
 
@@ -180,6 +183,6 @@ autoplay = true
 
 [connection signal="button_down" from="StartGameMulti_Button" to="." method="_on_start_game_multi_button_button_down"]
 [connection signal="pressed" from="StartGameMulti_Button" to="." method="_on_start_game_multi_button_pressed"]
-[connection signal="toggled" from="Label2/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="button_down" from="Backto_MainMenu" to="." method="_on_backto_main_menu_button_down"]
 [connection signal="pressed" from="Backto_MainMenu" to="." method="_on_backto_main_menu_pressed"]

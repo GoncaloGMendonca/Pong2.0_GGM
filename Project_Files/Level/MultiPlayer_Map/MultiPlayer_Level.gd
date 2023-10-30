@@ -22,8 +22,19 @@ var paused = false
 var main_menu_scene: PackedScene
 
 func _ready() -> void:
-	multi_p_1_label.text = GameManager.player1_name
-	multi_p_2_label.text = GameManager.player2_name
+	if GameManager.player1_name.is_empty():
+		multi_p_1_label.text = "Player 1"
+	else:
+		multi_p_1_label.text = GameManager.player1_name
+	
+		
+	if GameManager.player2_name.is_empty():
+		multi_p_2_label.text = "Player 2"
+	else:
+		multi_p_2_label.text = GameManager.player1_name
+	
+#
+
 	main_menu_scene = ResourceLoader.load("res://UI_Menus/Main_Menu/main_menu.tscn")
 	
 
